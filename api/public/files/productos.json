@@ -1,0 +1,22 @@
+[
+{
+    "id": 1,
+    "nombre": "Producto 1",
+    "timestamp": "15/03/2022",
+    "descripcion": "Descripcion del producto 1",
+    "codigo": "ABC123",
+    "foto": "https://www.google.com",
+    "precio": 100,
+    "stock": 5
+},
+{
+    "id": 2,
+    "nombre": "Producto 2",
+    "timestamp": "15/05/2022",
+    "descripcion": "Descripcion del producto 2",
+    "codigo": "ABC123",
+    "foto": "https://www.google.com",
+    "precio": 100,
+    "stock": 50
+}
+]
