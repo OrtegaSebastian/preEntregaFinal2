@@ -10,6 +10,7 @@ const save = async (objCarrito)  =>{
     if(data){
         carrito = JSON.parse(data);
         const id = carrito.length +1;
+        const user = 
         objCarrito.id = id;     
         carrito.push(objCarrito);
             const carritosString = JSON.stringify(carrito);

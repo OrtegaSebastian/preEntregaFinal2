@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.static('api'));
 const context = process.env.CONTEXT || 'api';
 app.use('/api/productos', productosRoutes);
-app.use('/api/chart', chartRoutes);
+app.use('/api/carrito', chartRoutes);
 
 app.get('/', (req,res)=>{
     res.send("Main page")
