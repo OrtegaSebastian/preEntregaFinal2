@@ -1,26 +1,36 @@
 const express = require('express');
-const chartController = require("../controllers/carrito");
+const carritosController = require('../controllers/carrito'); 
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    chartController.getAll(req, res);
+router.get('/', async (req, res) => {
+    const response = await carritosController.getAll();
+    res.send(response);
 });
 
-router.get('/:id', (req, res) => {
-    chartController.getById(req, res);
+router.get('/:id', async (req, res) => {
+    const id = parseInt(req.params.id);
+    const response = await carritosController.getById(id);
+    res.send(response);
 });
 
-router.post('/', (req, res) => {
-    res.send('POST');
+router.post('/', async (req, res) => {
+    const carrito = req.body;
+    const response = await carritosController.save(carrito);
+    res.send(response);
 });
 
-router.put('/', (req, res) => {
-    res.send('PUT');
+router.put('/:id', async (req, res) => {
+    const carrito = req.body;
+    const id = parseInt(req.params.id);
+    const response = await carritosController.updateById(id, carrito);
+    res.send(response);
 });
 
-router.delete('/', (req, res) => {
-    res.send('DELETE');
+router.delete('/:id', async (req, res) => {
+    const id = parseInt(req.params.id);
+    const response = await carritosController.deleteById(id);
+    res.send(response);
 });
 
-module.exports = router;
+module.exports = router
