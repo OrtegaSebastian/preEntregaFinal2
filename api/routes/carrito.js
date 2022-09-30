@@ -8,10 +8,11 @@ routerCarrito.get('/', async (req, res) => {
     res.send(response);
 });
 
-routerCarrito.get('/:id/Usuario/:idUsuario', async (req, res) => {
+routerCarrito.get('/:id/:Usuario/:idUsuario', async (req, res) => {
     const id = parseInt(req.params.id);
-    const idUsuario = parseInt(req.params.body)
-    const response = await carritosController.getById(id, idUsuario);
+    const Usuario = parseInt(req.params.Usuario)
+    const idUsuario = parseInt(req.params.idUsuario)
+    const response = await carritosController.getById(id, idUsuario,Usuario);
     res.send(response);
 });
 
